@@ -21,9 +21,11 @@ markdown_extensions:
 
 plugins:
   - search
+  - meta
 
 theme:
   name: material
+  custom_dir: overrides
   font:
     code: JetBrains Mono
   logo: assets/logo.png

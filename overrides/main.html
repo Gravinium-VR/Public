@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block extrahead %} {{ super() }} {# Only use page
+metadata if page exists #} {% if page %}
+<meta property="og:title" content="{{ page.meta.title or config.site_name }}" />
+<meta
+  property="og:description"
+  content="{{ page.meta.description or 'Gravinium Wiki' }}"
+/>
+<meta property="og:url" content="{{ config.site_url }}/{{ page.url }}" />
+<meta property="og:type" content="website" />
+<meta
+  property="og:image"
+  content="{{ page.meta.image | default(config.site_url ~ '/assets/logo.png') }}"
+/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="{{ page.meta.title or config.site_name }}"
+/>
+<meta
+  name="twitter:description"
+  content="{{ page.meta.description or 'Gravinium Wiki' }}"
+/>
+<meta
+  name="twitter:image"
+  content="{{ page.meta.image | default(config.site_url ~ '/assets/logo.png') }}"
+/>
+{% else %} {# Fallback for pages where `page` is None (like 404) #}
+<meta property="og:title" content="{{ config.site_name }}" />
+<meta
+  property="og:description"
+  content="The official wiki for Gravinium VR content."
+/>
+<meta property="og:url" content="{{ config.site_url }}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ config.site_url }}/assets/logo.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ config.site_name }}" />
+<meta
+  name="twitter:description"
+  content="The official wiki for Gravinium VR content."
+/>
+<meta name="twitter:image" content="{{ config.site_url }}/assets/logo.png" />
+{% endif %} {% endblock %}
