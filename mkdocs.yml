@@ -2,6 +2,7 @@ site_name: Gravinium Wiki
 site_url: https://wiki.gravinium.org
 repo_name: Gravinium-VR/Public
 repo_url: https://github.com/Gravinium-VR/Public
+edit_uri: edit/main/docs/
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
