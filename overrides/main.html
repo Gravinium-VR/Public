@@ -1,45 +1,52 @@
-{% extends "base.html" %} {% block extrahead %} {{ super() }} {# Only use page
-metadata if page exists #} {% if page %}
+{% extends "base.html" %} {% block extrahead %} {{ super() }} {% set
+default_image = config.site_url ~ '/assets/logo.png' %} {% set
+default_twitter_card = 'summary' %} {% set default_theme_color = '#00FF35' %} {%
+set default_description = 'The official wiki for Gravinium content.' %} {% if
+page %}
 <meta property="og:title" content="{{ page.meta.title or config.site_name }}" />
 <meta
   property="og:description"
-  content="{{ page.meta.description or 'Gravinium Wiki' }}"
+  content="{{ page.meta.description or default_description }}"
 />
 <meta property="og:url" content="{{ config.site_url }}/{{ page.url }}" />
 <meta property="og:type" content="website" />
 <meta
   property="og:image"
-  content="{{ page.meta.image | default(config.site_url ~ '/assets/logo.png') }}"
+  content="{{ page.meta.image | default(default_image) }}"
 />
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:card"
+  content="{{ page.meta.twitter_card | default(default_twitter_card) }}"
+/>
 <meta
   name="twitter:title"
   content="{{ page.meta.title or config.site_name }}"
 />
 <meta
   name="twitter:description"
-  content="{{ page.meta.description or 'Gravinium Wiki' }}"
+  content="{{ page.meta.description or default_description }}"
 />
 <meta
   name="twitter:image"
-  content="{{ page.meta.image | default(config.site_url ~ '/assets/logo.png') }}"
+  content="{{ page.meta.image | default(default_image) }}"
 />
-{% else %} {# Fallback for pages where `page` is None (like 404) #}
-<meta property="og:title" content="{{ config.site_name }}" />
+
 <meta
-  property="og:description"
-  content="The official wiki for Gravinium VR content."
+  name="theme-color"
+  content="{{ page.meta.theme_color | default(default_theme_color) }}"
 />
+{% else %}
+<meta property="og:title" content="{{ config.site_name }}" />
+<meta property="og:description" content="{{ default_description }}" />
 <meta property="og:url" content="{{ config.site_url }}" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="{{ config.site_url }}/assets/logo.png" />
+<meta property="og:image" content="{{ default_image }}" />
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="{{ default_twitter_card }}" />
 <meta name="twitter:title" content="{{ config.site_name }}" />
-<meta
-  name="twitter:description"
-  content="The official wiki for Gravinium VR content."
-/>
-<meta name="twitter:image" content="{{ config.site_url }}/assets/logo.png" />
+<meta name="twitter:description" content="{{ default_description }}" />
+<meta name="twitter:image" content="{{ default_image }}" />
+
+<meta name="theme-color" content="{{ default_theme_color }}" />
 {% endif %} {% endblock %}
