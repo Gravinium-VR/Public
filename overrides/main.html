@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% block extrahead %} {{ super() }} {% set
-default_image = config.site_url ~ '/assets/logo.png' %} {% set
-default_twitter_card = 'summary' %} {% set default_theme_color = '#00FF35' %} {%
-set default_description = 'The official wiki for Gravinium content.' %} {% if
-page %}
+{% extends "base.html" %} {% block extrahead %} {{ super() }} {# Default
+metadata #} {% set default_image = config.site_url ~ '/assets/logo.png' %} {%
+set default_twitter_card = 'summary' %} {% set default_theme_color = '#00FF35'
+%} {% set default_description = 'The official wiki for Gravinium content.' %} {%
+if page %} {# Compute absolute image URL #} {% if page.meta.image %} {% if
+page.meta.image.startswith('http') %} {% set og_image = page.meta.image %} {%
+else %} {% set og_image = config.site_url ~ '/' ~ page.meta.image %} {% endif %}
+{% else %} {% set og_image = default_image %} {% endif %}
+
 <meta property="og:title" content="{{ page.meta.title or config.site_name }}" />
 <meta
   property="og:description"
@@ -10,10 +14,7 @@ page %}
 />
 <meta property="og:url" content="{{ config.site_url }}/{{ page.url }}" />
 <meta property="og:type" content="website" />
-<meta
-  property="og:image"
-  content="{{ page.meta.image | default(default_image) }}"
-/>
+<meta property="og:image" content="{{ og_image }}" />
 
 <meta
   name="twitter:card"
@@ -27,10 +28,7 @@ page %}
   name="twitter:description"
   content="{{ page.meta.description or default_description }}"
 />
-<meta
-  name="twitter:image"
-  content="{{ page.meta.image | default(default_image) }}"
-/>
+<meta name="twitter:image" content="{{ og_image }}" />
 
 <meta
   name="theme-color"
