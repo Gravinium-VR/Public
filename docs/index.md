@@ -1,5 +1,5 @@
 ---
-title: Gravinium Wiki Home
+title: Home
 description: The official wiki and public repo for anything Gravinium related. Find images, transcriptions, lore, and other information here.
 image: assets/logo.png
 twitter_card: summary # 'summary' or 'summary_large_image'
