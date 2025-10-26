@@ -3,6 +3,8 @@ site_url: https://wiki.gravinium.org
 repo_name: Gravinium-VR/Public
 repo_url: https://github.com/Gravinium-VR/Public
 edit_uri: edit/main/docs/
+
+# Extensions/Plugins
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
@@ -23,7 +25,9 @@ markdown_extensions:
 plugins:
   - search
   - meta
+  - awesome-nav
 
+# Theme/Page Setup
 theme:
   name: material
   custom_dir: overrides
@@ -49,17 +53,18 @@ theme:
       accent: purple
   features:
     - navigation.instant
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - navigation.footer
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune 
     - search.highlight
     - search.share
     - content.code.copy
     - content.action.edit
     - toc.integrate
-    - header.autohide
+    - toc.follow
 
+# Other
 extra:
   social:
     - icon: simple/discord

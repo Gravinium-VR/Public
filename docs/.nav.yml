@@ -1,0 +1,4 @@
+nav:
+  - Home: index.md
+  - other-stuff/
+append_unmatched: true
