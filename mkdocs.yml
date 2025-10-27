@@ -66,6 +66,8 @@ theme:
 # Other
 extra:
   social:
+    - icon: material/web
+      link: https://gravinium.org
     - icon: simple/discord
       link: https://gravinium.org/discord
     - icon: simple/twitch
