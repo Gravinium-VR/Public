@@ -9,4 +9,4 @@ twitter_card: summary # 'summary' or 'summary_large_image'
 
 COMING SOON!
 
-You can find our official website at [gravinium.org](https://gravinium.org).
+You can find our official website at [gravinium.org](https://gravinium.org){:target="_blank"}.

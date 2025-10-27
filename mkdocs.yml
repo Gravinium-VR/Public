@@ -20,7 +20,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
-  - pymdownx.details
+  #- pymdownx.details
 
 plugins:
   - search
@@ -42,7 +42,7 @@ theme:
         icon: material/weather-sunny
         name: Dark mode
       primary: green
-      accent: purple
+      accent: blue
 
     # Light Mode
     - scheme: default
@@ -50,7 +50,7 @@ theme:
         icon: material/weather-night
         name: Light mode
       primary: green
-      accent: purple
+      accent: blue
   features:
     - navigation.instant
     - navigation.instant.progress
@@ -61,7 +61,6 @@ theme:
     - search.share
     - content.code.copy
     - content.action.edit
-    - toc.integrate
     - toc.follow
 
 # Other

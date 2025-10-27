@@ -1,0 +1,6 @@
+title: Module
+nav: 
+    - index.md
+    - module-material.md
+    - module-events.md
+append_unmatched: true
