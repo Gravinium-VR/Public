@@ -7,6 +7,6 @@ twitter_card: summary # 'summary' or 'summary_large_image'
 
 # Welcome to the Gravinium Wiki
 
-COMING SOON!
+This site is a place to document all information regarding Gravinium.
 
 You can find our official website at [gravinium.org](https://gravinium.org){:target="_blank"}.
